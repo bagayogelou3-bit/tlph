@@ -1,0 +1,131 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+    
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, sans-serif;
+            }
+            body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("set.jpg");
+    background-size: cover;
+    background-position: center;
+}
+            
+    
+            .login-box {
+    background: white;
+    width: 350px;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4b5bdc;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+        </style>
+    </head>
+    
+    <body>
+    
+        <nav>
+            <div class="logo">BAGZWebsite</div>
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="contact.html">contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <a href="homepage.html" class="back-btn">
+                ← Back to Home
+            </a>
+        </nav>
+    
+            <div class="login-box">
+
+    <h1>Login</h1>
+
+    <form onsubmit="login(event)">
+
+        <input type="text" id="username" placeholder="Username" required>
+
+        <input type="password" id="password" placeholder="Password" required>
+
+        <button type="submit">Login</button>
+
+        <label class="remember">
+            <input type="checkbox" checked>
+            Remember me
+        </label>
+
+        <p class="error" id="errorMessage"></p>
+
+    </form>
+
+</div>
+
+<script>
+
+function login(event) {
+
+    event.preventDefault();
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if (username === "bagz@gmail" && password === "12345") {
+
+        alert("Login Successful!");
+        window.location.href = "Homepage.html";
+
+    } else {
+
+        document.getElementById("errorMessage").innerHTML =
+        "Wrong Username or Password!";
+
+    }
+
+}
+
+</script>
+
+        </main>
+    </body>
+    </html>
