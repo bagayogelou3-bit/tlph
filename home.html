@@ -141,6 +141,31 @@
 </head>
 
 <body>
+    <body>
+  <header>
+    <h2>Bagayo Website</h2>
+    <button class="logout" onclick="logout()">Logout</button>
+  </header>
+
+  <main>
+    <h1>Welcome to Our Website!</h1>
+    <p>
+      Explore our products, learn more about us,
+      and enjoy your visit.
+    </p>
+    <button class="explore" onclick="location.href='product.html'">
+      Explore Products
+    </button>
+  </main>
+
+  <script>
+    function logout() {
+      if (confirm("Are you sure you want to log out?")) {
+        window.location.href = "home.html";
+      }
+    }
+  </script>
+</body>
 
     <nav>
         <div class="logo">MyWebsite</div>
