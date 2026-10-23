@@ -4,50 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | BAGZWebsite</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Products - MyWebsite</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f5f7fb; color: #222; }
+        nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 15px 8%; background: white; box-shadow: 0 2px 10px #0000000d; }
+        .logo { font-size: 24px; font-weight: bold; color: #4f46e5; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul a { color: #555; text-decoration: none; }
+        nav ul a:hover, nav ul a.active { color: #4f46e5; }
+        .login-btn, .buy-btn { display: inline-block; background: #4f46e5; color: white; padding: 10px 18px; border-radius: 8px; text-decoration: none; transition: .3s; }
+        .login-btn:hover, .buy-btn:hover { background: #3730a3; transform: translateY(-2px); }
+        .products-section { padding: 55px 8%; }
+        .products-section h1 { text-align: center; font-size: 38px; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #777; margin-bottom: 35px; }
+        .product-grid { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .product-card { background: white; border-radius: 15px; padding: 22px; text-align: center; box-shadow: 0 8px 25px #00000009; transition: .3s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px #00000012; }
+        .product-image { height: 170px; display: flex; align-items: center; justify-content: center; background: #eef0ff; border-radius: 12px; margin-bottom: 20px; font-size: 58px; }
+        .product-card h2 { font-size: 20px; margin-bottom: 10px; }
+        .product-card p { color: #777; line-height: 1.6; min-height: 48px; margin-bottom: 15px; }
+        .price { display: block; color: #4f46e5; font-weight: bold; font-size: 21px; margin-bottom: 18px; }
+        footer { text-align: center; padding: 25px; color: #888; font-size: 14px; }
+        @media(max-width: 800px) { nav { padding: 15px 5%; } nav ul { gap: 12px; flex-wrap: wrap; } .product-grid { grid-template-columns: repeat(2, 1fr); } .products-section { padding: 40px 5%; } }
+        @media(max-width: 550px) { nav { flex-wrap: wrap; } nav ul { order: 3; width: 100%; justify-content: center; } .product-grid { grid-template-columns: 1fr; } .products-section h1 { font-size: 32px; } }
+    </style>
 </head>
 <body>
     <nav>
-        <a class="logo" href="index.html">BAGZWebsite</a>
+        <a class="logo" href="homepage.html">MyWebsite</a>
         <ul>
-            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a class="active" href="product.html">Products</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <button class="btn btn-red" onclick="logout()">Logout</button>
+        <a href="login.html" class="login-btn">Login</a>
     </nav>
 
-    <main>
-        <section class="hero">
-            <h1>Welcome Back to <span>BAGZWebsite!</span></h1>
-            <p>
-                Explore our website and discover a simple,
-                beautiful, and enjoyable experience.
-            </p>
-            <a class="btn" href="about.html">Discover More</a>
-        </section>
+    <main class="products-section">
+        <h1>Our Products</h1>
+        <p class="subtitle">Explore our simple and useful products.</p>
 
-        <section class="cards-three">
-            <article class="card">
-                <div class="feature-icon">✨</div>
-                <h3>Simple Design</h3>
-                <p>A clean and modern website experience.</p>
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-image">💻</div>
+                <h2>Basic Laptop</h2>
+                <p>Perfect for everyday work, study, and browsing.</p>
+                <span class="price">₱28,999</span>
+                <a href="contact.html" class="buy-btn">Inquire Now</a>
             </article>
-            <article class="card">
-                <div class="feature-icon">💜</div>
-                <h3>User Friendly</h3>
-                <p>Easy navigation across all our pages.</p>
+            <article class="product-card">
+                <div class="product-image">📱</div>
+                <h2>Smart Phone</h2>
+                <p>A modern smartphone for your everyday needs.</p>
+                <span class="price">₱16,999</span>
+                <a href="contact.html" class="buy-btn">Inquire Now</a>
             </article>
-            <article class="card">
-                <div class="feature-icon">🚀</div>
-                <h3>Explore More</h3>
-                <p>Learn about our mission and contact us.</p>
+            <article class="product-card">
+                <div class="product-image">🎧</div>
+                <h2>Wireless Headphones</h2>
+                <p>Enjoy clear sound with a comfortable design.</p>
+                <span class="price">₱2,499</span>
+                <a href="contact.html" class="buy-btn">Inquire Now</a>
             </article>
-        </section>
+            <article class="product-card">
+                <div class="product-image">⌚</div>
+                <h2>Smart Watch</h2>
+                <p>Keep track of your day with a stylish smartwatch.</p>
+                <span class="price">₱3,499</span>
+                <a href="contact.html" class="buy-btn">Inquire Now</a>
+            </article>
+            <article class="product-card">
+                <div class="product-image">🖥️</div>
+                <h2>Desktop Monitor</h2>
+                <p>A clear display for work and entertainment.</p>
+                <span class="price">₱6,999</span>
+                <a href="contact.html" class="buy-btn">Inquire Now</a>
+            </article>
+            <article class="product-card">
+                <div class="product-image">⌨️</div>
+                <h2>Keyboard</h2>
+                <p>A simple and comfortable keyboard for daily use.</p>
+                <span class="price">₱1,299</span>
+                <a href="contact.html" class="buy-btn">Inquire Now</a>
+            </article>
+        </div>
     </main>
 
-    <footer>© 2026 BAGZWebsite. All rights reserved.</footer>
+    <footer>© 2026 MyWebsite. All rights reserved.</footer>
 </body>
 </html>
