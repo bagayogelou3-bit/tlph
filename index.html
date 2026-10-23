@@ -1,160 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background: #f5f7fb;
-            color: #222;
-        }
-
-        /* Navigation */
-        nav {
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 8%;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #4f46e5;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #555;
-            transition: 0.3s;
-        }
-        nav a:hover {
-            color: #4f46e5;
-        }
-        .login-btn {
-            background: #4f46e5;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .login-btn:hover {
-            background: #3730a3;
-        }
-        /* Hero */
-        .hero {
-            min-height: calc(100vh - 70px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .hero-content {
-            max-width: 650px;
-        }
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 20px;
-            color: #222;
-        }
-        .hero h1 span {
-            color: #4f46e5;
-        }
-        .hero p {
-            font-size: 18px;
-            line-height: 1.7;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .start-btn {
-            display: inline-block;
-            background: #4f46e5;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .start-btn:hover {
-            background: #3730a3;
-            transform: translateY(-2px);
-        }
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #888;
-            font-size: 14px;
-        }
-
-        /* Mobile */
-        @media (max-width: 600px) {
-            nav {
-                padding: 0 5%;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-        }
-    </style>
+    <title>Dashboard | BAGZWebsite</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav>
-        <div class="logo">BAGZWebsite</div>
-
+        <a class="logo" href="index.html">BAGZWebsite</a>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="product.html">Product</a></li>
-            <li><a href="contact.html">contact</a></li>
+            <li><a href="index.html">Dashboard</a></li>
             <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-
-        <a href="login.html" class="login-btn">Login</a>
+        <button class="btn btn-red" onclick="logout()">Logout</button>
     </nav>
 
-    <main class="hero">
-        <div class="hero-content">
-            <h1>Welcome to <span>BAGZWebsite</span></h1>
-
+    <main>
+        <section class="hero">
+            <h1>Welcome Back to <span>BAGZWebsite!</span></h1>
             <p>
-                A simple and beautiful place to get started.
-                Explore our website and discover something great today.
+                Explore our website and discover a simple,
+                beautiful, and enjoyable experience.
             </p>
+            <a class="btn" href="about.html">Discover More</a>
+        </section>
 
-            <a href="product.html" class="start-btn">Get Started</a>
-        </div>
-        
+        <section class="cards-three">
+            <article class="card">
+                <div class="feature-icon">✨</div>
+                <h3>Simple Design</h3>
+                <p>A clean and modern website experience.</p>
+            </article>
+            <article class="card">
+                <div class="feature-icon">💜</div>
+                <h3>User Friendly</h3>
+                <p>Easy navigation across all our pages.</p>
+            </article>
+            <article class="card">
+                <div class="feature-icon">🚀</div>
+                <h3>Explore More</h3>
+                <p>Learn about our mission and contact us.</p>
+            </article>
+        </section>
     </main>
 
-    <footer>
-        © 2026 BAGZWebsite. All rights reserved.
-    </footer>
-
+    <footer>© 2026 BAGZWebsite. All rights reserved.</footer>
 </body>
 </html>
