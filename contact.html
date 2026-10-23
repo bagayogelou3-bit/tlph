@@ -4,69 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | BAGZWebsite</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Contact - MyWebsite</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f5f7fb; color: #222; }
+        nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 15px 8%; background: white; box-shadow: 0 2px 10px #0000000d; }
+        .logo { font-size: 24px; font-weight: bold; color: #4f46e5; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul a { color: #555; text-decoration: none; transition: .3s; }
+        nav ul a:hover, nav ul a.active { color: #4f46e5; }
+        .login-btn { background: #4f46e5; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; transition: .3s; }
+        .login-btn:hover { background: #3730a3; }
+        .contact-section { padding: 55px 8%; }
+        .contact-section h1 { text-align: center; font-size: 40px; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #777; margin-bottom: 35px; }
+        .contact-container { max-width: 1000px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .contact-info, .contact-form { background: white; padding: 32px; border-radius: 15px; box-shadow: 0 8px 25px #00000009; }
+        .contact-info h2, .contact-form h2 { margin-bottom: 18px; }
+        .contact-info p { color: #777; line-height: 1.8; margin-bottom: 25px; }
+        .info-item { margin-bottom: 22px; }
+        .info-item strong { display: block; color: #4f46e5; margin-bottom: 7px; }
+        .info-item span { color: #555; overflow-wrap: anywhere; }
+        .form-group { margin-bottom: 18px; }
+        label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: bold; color: #444; }
+        input, textarea { width: 100%; padding: 13px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-size: 15px; transition: .3s; }
+        input:focus, textarea:focus { border-color: #4f46e5; box-shadow: 0 0 0 3px #4f46e51a; }
+        textarea { min-height: 120px; resize: vertical; }
+        .send-btn { width: 100%; padding: 13px; border: none; border-radius: 8px; background: #4f46e5; color: white; font-size: 16px; cursor: pointer; transition: .3s; }
+        .send-btn:hover { background: #3730a3; transform: translateY(-2px); }
+        .form-message { display: none; margin-top: 15px; color: #4f46e5; font-size: 14px; line-height: 1.5; }
+        footer { text-align: center; padding: 25px; color: #888; font-size: 14px; }
+        @media(max-width: 750px) { nav { padding: 15px 5%; flex-wrap: wrap; } nav ul { gap: 14px; flex-wrap: wrap; } .contact-section { padding: 40px 5%; } .contact-section h1 { font-size: 32px; } .contact-container { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
     <nav>
-        <a class="logo" href="home.html">BAGZWebsite</a>
+        <a class="logo" href="homepage.html">MyWebsite</a>
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
         </ul>
-        <a class="btn" href="login.html">Login</a>
+        <a href="login.html" class="login-btn">Login</a>
     </nav>
 
-    <main>
-        <h1 class="page-title">Contact Us</h1>
-        <p class="subtitle">
-            Have a question? We'd love to hear from you.
-        </p>
+    <main class="contact-section">
+        <h1>Contact Us</h1>
+        <p class="subtitle">We'd love to hear from you. Send us a message!</p>
 
-        <section class="grid">
-            <article class="card">
+        <div class="contact-container">
+            <section class="contact-info">
                 <h2>Get in Touch</h2>
-                <p>📧 Email: bagayogelou@BAGZwebsite.com</p>
-                <p>📞 Phone: +63 912 345 6789</p>
-                <p>📍 Location: Aurora, Philippines</p>
-                <p style="margin-top:20px">
-                    Send us your questions or feedback using the form.
-                </p>
-            </article>
+                <p>Have a question or need help? Feel free to contact us. We look forward to hearing from you.</p>
 
-            <article class="card">
+                <div class="info-item">
+                    <strong>📧 Email</strong>
+                    <span>hello@mywebsite.com</span>
+                </div>
+                <div class="info-item">
+                    <strong>📞 Phone</strong>
+                    <span>+63 912 345 6789</span>
+                </div>
+                <div class="info-item">
+                    <strong>📍 Address</strong>
+                    <span>Philippines</span>
+                </div>
+            </section>
+
+            <section class="contact-form">
                 <h2>Send a Message</h2>
-
-                <form onsubmit="sendMessage(event)">
+                <form id="contactForm">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input id="name" name="name"
-                               placeholder="Enter your name" required>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input id="email" name="email" type="email"
-                               placeholder="Enter your email" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
                     </div>
-
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message"
-                                  placeholder="Write your message..."
-                                  required></textarea>
+                        <textarea id="message" placeholder="Write your message..." required></textarea>
                     </div>
-
-                    <button class="btn full-width" type="submit">
-                        Send Message
-                    </button>
+                    <button type="submit" class="send-btn">Send Message</button>
+                    <p id="formMessage" class="form-message" role="status"></p>
                 </form>
-            </article>
-        </section>
+            </section>
+        </div>
     </main>
 
-    <footer>© 2026 BAGZWebsite. All rights reserved.</footer>
+    <footer>© 2026 MyWebsite. All rights reserved.</footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("formMessage").textContent =
+                "Your form is complete. To send messages, connect an email service or backend.";
+            document.getElementById("formMessage").style.display = "block";
+        });
+    </script>
 </body>
 </html>
