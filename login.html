@@ -4,52 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | BAGZWebsite</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Login - MyWebsite</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f5f7fb; color: #222; }
+        nav { height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 8%; background: white; box-shadow: 0 2px 10px #0000000d; }
+        .logo { font-size: 24px; font-weight: bold; color: #4f46e5; text-decoration: none; }
+        .back-btn { color: #555; text-decoration: none; }
+        .back-btn:hover { color: #4f46e5; }
+        .login-section { min-height: calc(100vh - 125px); display: flex; justify-content: center; align-items: center; padding: 35px 20px; background: radial-gradient(circle at top, #e8e9ff, #f5f7fb 65%); }
+        .login-box { width: 100%; max-width: 410px; background: white; padding: 38px; border-radius: 16px; box-shadow: 0 12px 35px #0000000d; }
+        h1 { text-align: center; margin-bottom: 10px; font-size: 30px; }
+        .subtitle { text-align: center; color: #777; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: bold; color: #444; }
+        input { width: 100%; padding: 13px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; outline: none; transition: .3s; }
+        input:focus { border-color: #4f46e5; box-shadow: 0 0 0 3px #4f46e51a; }
+        .login-submit { width: 100%; padding: 13px; border: none; border-radius: 8px; background: #4f46e5; color: white; font-size: 16px; cursor: pointer; transition: .3s; }
+        .login-submit:hover { background: #3730a3; transform: translateY(-2px); }
+        .signup-text { text-align: center; margin-top: 24px; color: #777; font-size: 14px; }
+        .signup-text a { color: #4f46e5; text-decoration: none; font-weight: bold; }
+        .message { display: none; margin-top: 15px; color: #4f46e5; font-size: 14px; text-align: center; }
+        footer { text-align: center; padding: 25px; color: #888; font-size: 14px; }
+        @media(max-width: 500px) { nav { padding: 0 5%; } .login-box { padding: 28px 22px; } }
+    </style>
 </head>
 <body>
-    <main class="login-wrap">
+    <nav>
+        <a class="logo" href="homepage.html">MyWebsite</a>
+        <a class="back-btn" href="homepage.html">← Back to Home</a>
+    </nav>
+
+    <main class="login-section">
         <section class="login-box">
-            <h1>Welcome Back!</h1>
-            <p class="subtitle">Login to BAGZWebsite</p>
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Login to your account</p>
 
-            <form onsubmit="login(event)">
+            <form id="loginForm">
                 <div class="form-group">
-                    <label for="username">Email / Username</label>
-                    <input id="username" type="text"
-                           placeholder="Enter your username"
-                           autocomplete="username" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" autocomplete="email" required>
                 </div>
-
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input id="password" type="password"
-                           placeholder="Enter your password"
-                           autocomplete="current-password" required>
+                    <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password" required>
                 </div>
-
-                <label class="remember">
-                    <input type="checkbox" onchange="togglePassword()">
-                    Show password
-                </label>
-
-                <label class="remember">
-                    <input type="checkbox">
-                    Remember me
-                </label>
-
-                <button class="btn full-width" type="submit">
-                    Login
-                </button>
-
-                <p id="errorMessage" class="error" role="alert"></p>
+                <button type="submit" class="login-submit">Login</button>
+                <p id="message" class="message" role="status"></p>
             </form>
 
-            <p style="text-align:center; margin-top:20px">
-                <a href="home.html">← Back to Home</a>
-            </p>
+            <p class="signup-text">Don't have an account? <a href="#" id="signupLink">Sign Up</a></p>
         </section>
     </main>
+
+    <footer>© 2026 MyWebsite. All rights reserved.</footer>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("message").textContent =
+                "Form validated. Connect an authentication service to log in.";
+            document.getElementById("message").style.display = "block";
+        });
+
+        document.getElementById("signupLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            alert("A sign-up page has not been created yet.");
+        });
+    </script>
 </body>
 </html>
