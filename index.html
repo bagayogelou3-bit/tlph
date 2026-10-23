@@ -43,6 +43,75 @@
         footer { text-align: center; padding: 25px; color: #888; font-size: 14px; }
         @media(max-width: 800px) { nav { padding: 15px 5%; } nav ul { gap: 12px; flex-wrap: wrap; } .product-grid { grid-template-columns: repeat(2, 1fr); } .products-section { padding: 40px 5%; } }
         @media(max-width: 550px) { nav { flex-wrap: wrap; } nav ul { order: 3; width: 100%; justify-content: center; } .product-grid { grid-template-columns: 1fr; } .products-section h1 { font-size: 32px; } }
+        
+/* Responsive products only — keep original background */
+
+.products-container,
+.product-container,
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.product-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .products-container,
+    .product-container,
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .product-card img {
+        height: 150px;
+    }
+}
+
+/* Cellphone */
+@media (max-width: 480px) {
+    .products-container,
+    .product-container,
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .product-card img {
+        height: 110px;
+    }
+
+    .product-card h2,
+    .product-card h3 {
+        font-size: 14px;
+    }
+
+    .product-card p {
+        font-size: 12px;
+    }
+
+    .product-card button {
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 12px;
+    }
+}
+
     </style>
 </head>
 <body>
