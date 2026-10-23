@@ -7,7 +7,22 @@
     <title>Home - MyWebsite</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background: #f5f7fb; color: #222; }
+        body { margin: 0;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(245, 247, 251, 0.55),
+            rgba(232, 233, 255, 0.65)
+        ),
+        url("galaxy.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: Arial, sans-serif; }
         nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 15px 8%; background: white; box-shadow: 0 2px 10px #0000000d; }
         .logo { font-size: 24px; font-weight: bold; color: #4f46e5; text-decoration: none; }
         nav ul { list-style: none; display: flex; gap: 25px; }
