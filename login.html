@@ -77,14 +77,17 @@
     <script>
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            document.getElementById("message").textContent =
-                "Form validated. Connect an authentication service to log in.";
-            document.getElementById("message").style.display = "block";
-        });
 
-        document.getElementById("signupLink").addEventListener("click", function(event) {
-            event.preventDefault();
-            alert("A sign-up page has not been created yet.");
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Sample login credentials
+            if (username === "nicky" && password === "20004") {
+                window.location.href = "home.html";
+            } else {
+                document.getElementById("error-message").textContent =
+                    "Incorrect username or password. Please try again.";
+            }
         });
     </script>
 </body>
