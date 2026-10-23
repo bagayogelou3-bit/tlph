@@ -4,81 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | BAGZWebsite</title>
-    <link rel="stylesheet" href="style.css">
-<style>
-<body>
-    body {
-    min-height: 100vh;
-    background-color: #211044;
-    background-image:
-        linear-gradient(
-            rgba(20, 10, 45, 0.55),
-            rgba(76, 29, 149, 0.45)
-        ),
-        url("galaxy.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+    <title>About - MyWebsite</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f5f7fb; color: #222; }
+        nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 15px 8%; background: white; box-shadow: 0 2px 10px #0000000d; }
+        .logo { font-size: 24px; font-weight: bold; color: #4f46e5; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul a { color: #555; text-decoration: none; transition: .3s; }
+        nav ul a:hover, nav ul a.active { color: #4f46e5; }
+        .login-btn, .contact-btn { display: inline-block; background: #4f46e5; color: white; padding: 12px 22px; border-radius: 8px; text-decoration: none; transition: .3s; }
+        .login-btn:hover, .contact-btn:hover { background: #3730a3; transform: translateY(-2px); }
+        .about-section { padding: 60px 8%; }
+        .about-title { text-align: center; margin-bottom: 40px; }
+        .about-title h1 { font-size: 40px; margin-bottom: 12px; }
+        .about-title p { color: #777; }
+        .about-container { max-width: 1000px; margin: auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        .about-card { background: white; padding: 32px; border-radius: 15px; box-shadow: 0 8px 25px #00000009; transition: .3s; }
+        .about-card:hover { transform: translateY(-4px); }
+        .about-card h2 { color: #4f46e5; margin-bottom: 15px; }
+        .about-card p { color: #666; line-height: 1.8; margin-bottom: 12px; }
+        .features { max-width: 1000px; margin: 28px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .feature { background: white; text-align: center; padding: 28px 18px; border-radius: 14px; box-shadow: 0 8px 25px #00000009; transition: .3s; }
+        .feature:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 36px; margin-bottom: 12px; }
+        .feature h3 { margin-bottom: 10px; }
+        .feature p { color: #777; line-height: 1.6; font-size: 14px; }
+        .about-button { text-align: center; margin-top: 35px; }
+        footer { text-align: center; padding: 25px; color: #888; font-size: 14px; }
+        @media(max-width: 750px) { nav { padding: 15px 5%; flex-wrap: wrap; } nav ul { gap: 14px; flex-wrap: wrap; } .about-section { padding: 40px 5%; } .about-container { grid-template-columns: 1fr; } .features { grid-template-columns: 1fr; } .about-title h1 { font-size: 32px; } }
     </style>
-    </head>
+</head>
+<body>
     <nav>
-        <a class="logo" href="home.html">BAGZWebsite</a>
+        <a class="logo" href="homepage.html">MyWebsite</a>
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a class="active" href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a class="btn" href="login.html">Login</a>
+        <a href="login.html" class="login-btn">Login</a>
     </nav>
 
-    <main>
-        <h1 class="page-title">About Us</h1>
-        <p class="subtitle">
-            Get to know BAGZWebsite and what we stand for.
-        </p>
+    <main class="about-section">
+        <div class="about-title">
+            <h1>About MyWebsite</h1>
+            <p>Simple, useful, and made with you in mind.</p>
+        </div>
 
-        <section class="grid">
-            <article class="card">
+        <div class="about-container">
+            <section class="about-card">
                 <h2>Who We Are</h2>
-                <p>
-                    Welcome to BAGZWebsite! We aim to provide
-                    a simple, enjoyable, and user-friendly online
-                    experience for everyone.
-                </p>
-            </article>
+                <p>Welcome to MyWebsite! We are focused on creating a simple and pleasant online experience for everyone.</p>
+                <p>Our goal is to provide useful products and services through a clean, easy-to-use website.</p>
+            </section>
 
-            <article class="card">
+            <section class="about-card">
                 <h2>Our Mission</h2>
-                <p>
-                    Our mission is to make browsing easy through
-                    accessible design, useful information, and
-                    a welcoming digital environment.
-                </p>
-            </article>
-        </section>
+                <p>Our mission is to make technology simple and accessible. We believe a good website should be easy to understand and enjoyable to use.</p>
+                <p>We continue to improve our website and create better experiences for our visitors.</p>
+            </section>
+        </div>
 
-        <section class="cards-three">
-            <article class="card">
+        <div class="features">
+            <article class="feature">
                 <div class="feature-icon">✨</div>
                 <h3>Simple</h3>
-                <p>Easy-to-use pages and straightforward navigation.</p>
+                <p>Clean and easy-to-use designs that everyone can understand.</p>
             </article>
-            <article class="card">
+            <article class="feature">
+                <div class="feature-icon">💡</div>
+                <h3>Useful</h3>
+                <p>Products and features designed to provide value.</p>
+            </article>
+            <article class="feature">
                 <div class="feature-icon">💜</div>
-                <h3>User Focused</h3>
-                <p>A design that puts visitors first.</p>
+                <h3>User Friendly</h3>
+                <p>A pleasant experience from the moment you visit.</p>
             </article>
-            <article class="card">
-                <div class="feature-icon">🌟</div>
-                <h3>Quality</h3>
-                <p>A consistent design across the website.</p>
-            </article>
-        </section>
+        </div>
+
+        <div class="about-button">
+            <a href="contact.html" class="contact-btn">Contact Us →</a>
+        </div>
     </main>
 
-    <footer>© 2026 BAGZWebsite. All rights reserved.</footer>
+    <footer>© 2026 MyWebsite. All rights reserved.</footer>
 </body>
 </html>
